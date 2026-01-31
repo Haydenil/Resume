@@ -6,8 +6,8 @@ title: LI ZHOUJIAN
 name_pronunciation: ''
 
 # Full name (for SEO)
-first_name: ''
-last_name: ''
+first_name: 'Zhoujian'
+last_name: 'Li'
 
 # Status emoji
 status:
@@ -24,8 +24,8 @@ role: Postgraduate Student
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: ''
-    url: ''
+  - name: 'National University of Singapore'
+    url: 'https://www.nus.edu.sg'
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
@@ -34,7 +34,7 @@ profiles:
     url: mailto:E1539341@u.nus.edu
     label: E-mail Me
   - icon: brands/github
-    url: https://github.com/114514wo
+    url: https://github.com/Haydenil
   - icon: brands/linkedin
     url: https://www.linkedin.com/in/LIZHOUJIAN
 
