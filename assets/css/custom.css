@@ -1,0 +1,89 @@
+/* Custom Academic Blue Theme Override */
+/* This CSS overrides the default emerald green with a professional deep blue */
+
+:root {
+  /* Primary colors - Deep Academic Blue */
+  --primary-500: #1e40af;  /* Deep blue */
+  --primary-600: #1e3a8a;
+  --primary-700: #1e3a8a;
+  
+  /* Secondary accent - Teal/Cyan */
+  --secondary-500: #0891b2;
+  --secondary-600: #0e7490;
+}
+
+/* Override Tailwind primary colors */
+.bg-primary-500 {
+  background-color: #1e40af !important;
+}
+
+.bg-primary-600 {
+  background-color: #1e3a8a !important;
+}
+
+.bg-primary-700 {
+  background-color: #172554 !important;
+}
+
+.text-primary-500 {
+  color: #1e40af !important;
+}
+
+.text-primary-600 {
+  color: #1e3a8a !important;
+}
+
+/* Links */
+a {
+  color: #1e40af;
+}
+
+a:hover {
+  color: #0891b2;
+}
+
+/* Navigation bar */
+.navbar {
+  background-color: #1e3a8a !important;
+}
+
+/* Buttons */
+.btn-primary, 
+button[type="submit"],
+.bg-primary-600 {
+  background-color: #1e40af !important;
+  border-color: #1e40af !important;
+}
+
+.btn-primary:hover,
+button[type="submit"]:hover {
+  background-color: #1e3a8a !important;
+}
+
+/* Hero section dark background */
+.dark .bg-primary-700,
+.dark .bg-primary-600 {
+  background-color: #1e3a8a !important;
+}
+
+/* Skills progress bars */
+.bg-primary-500 {
+  background-color: #1e40af !important;
+}
+
+/* Tags and badges */
+.badge,
+.tag {
+  background-color: #1e40af !important;
+}
+
+/* Focus states */
+*:focus {
+  outline-color: #1e40af !important;
+}
+
+/* Selection highlight */
+::selection {
+  background-color: #1e40af;
+  color: white;
+}
