@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LI ZHOUJIAN - Postgraduate Student at National University of Singapore, specializing in AI, Robotics, and Autonomous Driving">
+    <meta name="description"
+        content="LI ZHOUJIAN - Postgraduate Student at National University of Singapore, specializing in AI, Robotics, and Autonomous Driving">
     <meta name="keywords" content="LI ZHOUJIAN, NUS, Robotics, AI, Autonomous Driving, Reinforcement Learning">
     <meta name="author" content="LI ZHOUJIAN">
     <title>LI ZHOUJIAN | Robotics Researcher @ NUS</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -27,6 +32,7 @@
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
@@ -64,14 +70,21 @@
                     <a href="https://github.com/Haydenil" target="_blank" class="social-link" title="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/LIZHOUJIAN" target="_blank" class="social-link" title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/LIZHOUJIAN" target="_blank" class="social-link"
+                        title="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
-                <a href="#about" class="hero-cta">
-                    <span>Explore My Work</span>
-                    <i class="fas fa-arrow-down"></i>
-                </a>
+                <div class="hero-buttons">
+                    <a href="assets/resume.pdf" download class="hero-cta download-cv">
+                        <i class="fas fa-download"></i>
+                        <span>Download CV</span>
+                    </a>
+                    <a href="#about" class="hero-cta secondary">
+                        <span>Explore My Work</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </a>
+                </div>
             </div>
             <div class="hero-image">
                 <div class="avatar-container">
@@ -97,13 +110,14 @@
             <div class="about-content">
                 <div class="about-text">
                     <p class="about-intro">
-                        I am <strong>LI ZHOUJIAN</strong>, currently pursuing a Master's degree in Robotics at the 
-                        <strong>National University of Singapore</strong>. My research interests focus on artificial intelligence, 
+                        I am <strong>LI ZHOUJIAN</strong>, currently pursuing a Master's degree in Robotics at the
+                        <strong>National University of Singapore</strong>. My research interests focus on artificial
+                        intelligence,
                         autonomous driving, reinforcement learning, and large language models.
                     </p>
                     <p>
-                        With a background in intelligent manufacturing and practical experience in image processing 
-                        and navigation algorithms, I am passionate about developing innovative solutions in robotics 
+                        With a background in intelligent manufacturing and practical experience in image processing
+                        and navigation algorithms, I am passionate about developing innovative solutions in robotics
                         and AI technologies.
                     </p>
                 </div>
@@ -114,6 +128,103 @@
                         <span class="tag"><i class="fas fa-car"></i> End-to-end Autonomous Driving</span>
                         <span class="tag"><i class="fas fa-robot"></i> Reinforcement Learning</span>
                         <span class="tag"><i class="fas fa-comments"></i> Large Language Models</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section publications">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon"><i class="fas fa-file-alt"></i></span>
+                Publications
+            </h2>
+            <div class="publications-grid">
+                <!-- Featured Publication -->
+                <div class="publication-card featured">
+                    <div class="pub-featured-badge">
+                        <i class="fas fa-star"></i> Featured
+                    </div>
+                    <div class="pub-content">
+                        <div class="pub-type">
+                            <span class="pub-type-badge arxiv">arXiv Preprint</span>
+                            <span class="pub-year">2025</span>
+                        </div>
+                        <h3 class="pub-title">DVDP: An End-to-End Policy for Mobile Robot Visual Docking with RGB-D
+                            Perception</h3>
+                        <p class="pub-authors">
+                            H. Min, <span class="author-highlight">Z. Li</span>, Y. Yang, J. Chen, S. Yuan
+                        </p>
+                        <p class="pub-venue">
+                            <i class="fas fa-book"></i> arXiv:2509.13024
+                        </p>
+                        <p class="pub-abstract">
+                            End-to-end visual docking policy using RGB-D for mobile robots; achieves state-of-the-art
+                            results with real-world deployment on SCOUT Mini.
+                        </p>
+                        <div class="pub-tags">
+                            <span class="pub-tag">Robotics</span>
+                            <span class="pub-tag">Visual Docking</span>
+                            <span class="pub-tag">RGB-D</span>
+                            <span class="pub-tag">End-to-End</span>
+                        </div>
+                        <div class="pub-links">
+                            <a href="https://arxiv.org/abs/2509.13024" target="_blank" class="pub-link">
+                                <i class="fas fa-external-link-alt"></i> arXiv
+                            </a>
+                            <a href="content/publication/DVDP/DVDP.pdf" target="_blank" class="pub-link pdf">
+                                <i class="fas fa-file-pdf"></i> PDF
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pub-visual">
+                        <div class="pub-icon-large">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conference Paper -->
+                <div class="publication-card">
+                    <div class="pub-content">
+                        <div class="pub-type">
+                            <span class="pub-type-badge conference">Conference Paper</span>
+                            <span class="pub-year">2025</span>
+                        </div>
+                        <h3 class="pub-title">A Reinforcement Learning-Driven Algorithm for Rapid Path Replanning of
+                            Robot Navigation in Indoor Uncertain Discrete Environments</h3>
+                        <p class="pub-authors">
+                            H. Min, <span class="author-highlight">Z. Li</span>, W. Chi
+                        </p>
+                        <p class="pub-venue">
+                            <i class="fas fa-users"></i> CCDC 2025 - 37th Chinese Control and Decision Conference
+                        </p>
+                        <p class="pub-abstract">
+                            Novel reinforcement learning approach for efficient robot path replanning in uncertain
+                            indoor environments with rapid adaptation to dynamic conditions.
+                        </p>
+                        <div class="pub-tags">
+                            <span class="pub-tag">Reinforcement Learning</span>
+                            <span class="pub-tag">Path Planning</span>
+                            <span class="pub-tag">Navigation</span>
+                        </div>
+                        <div class="pub-links">
+                            <a href="https://www.researchgate.net/publication/394340803" target="_blank"
+                                class="pub-link">
+                                <i class="fab fa-researchgate"></i> ResearchGate
+                            </a>
+                            <a href="content/publication/conference-paper/conference-paper.pdf" target="_blank"
+                                class="pub-link pdf">
+                                <i class="fas fa-file-pdf"></i> PDF
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pub-visual">
+                        <div class="pub-icon-large">
+                            <i class="fas fa-route"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -264,8 +375,10 @@
                         <div class="language-item">
                             <div class="language-circle" data-percent="100">
                                 <svg viewBox="0 0 36 36">
-                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                    <path class="circle-progress" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle-bg"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-progress" stroke-dasharray="100, 100"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                                 </svg>
                                 <span class="percent">100%</span>
                             </div>
@@ -274,8 +387,10 @@
                         <div class="language-item">
                             <div class="language-circle" data-percent="80">
                                 <svg viewBox="0 0 36 36">
-                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                    <path class="circle-progress" stroke-dasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle-bg"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle-progress" stroke-dasharray="80, 100"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                                 </svg>
                                 <span class="percent">80%</span>
                             </div>
@@ -364,7 +479,8 @@
             </h2>
             <div class="contact-content">
                 <p class="contact-intro">
-                    I'm always open to discussing research collaborations, opportunities, or just having a chat about robotics and AI!
+                    I'm always open to discussing research collaborations, opportunities, or just having a chat about
+                    robotics and AI!
                 </p>
                 <div class="contact-links">
                     <a href="mailto:E1539341@u.nus.edu" class="contact-btn email">
@@ -400,4 +516,5 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
 </body>
+
 </html>
