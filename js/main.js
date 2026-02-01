@@ -245,3 +245,183 @@ window.addEventListener('scroll', function() {
 console.log('%c👋 Hello there!', 'font-size: 24px; font-weight: bold;');
 console.log('%cWelcome to my portfolio. Built with ❤️ by LI ZHOUJIAN', 'font-size: 14px; color: #0891b2;');
 console.log('%cInterested in collaboration? Email me at E1539341@u.nus.edu', 'font-size: 12px; color: #94a3b8;');
+
+/* ========================================
+   Interactive Particle System
+   ======================================== */
+function initParticleSystem() {
+    const canvas = document.getElementById('particle-canvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let mouse = { x: null, y: null, radius: 150 };
+    
+    // Resize canvas
+    function resizeCanvas() {
+        canvas.width = canvas.parentElement.offsetWidth;
+        canvas.height = canvas.parentElement.offsetHeight;
+    }
+    
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    
+    // Mouse tracking
+    canvas.addEventListener('mousemove', function(e) {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+    });
+    
+    canvas.addEventListener('mouseleave', function() {
+        mouse.x = null;
+        mouse.y = null;
+    });
+    
+    // Particle class
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 3 + 1;
+            this.baseX = this.x;
+            this.baseY = this.y;
+            this.speedX = (Math.random() - 0.5) * 0.5;
+            this.speedY = (Math.random() - 0.5) * 0.5;
+            this.density = Math.random() * 30 + 1;
+        }
+        
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(34, 211, 238, 0.6)';
+            ctx.fill();
+        }
+        
+        update() {
+            // Move particles
+            this.x += this.speedX;
+            this.y += this.speedY;
+            
+            // Bounce off edges
+            if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            
+            // Mouse interaction
+            if (mouse.x !== null && mouse.y !== null) {
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < mouse.radius) {
+                    let force = (mouse.radius - distance) / mouse.radius;
+                    let directionX = dx / distance;
+                    let directionY = dy / distance;
+                    this.x -= directionX * force * 3;
+                    this.y -= directionY * force * 3;
+                }
+            }
+        }
+    }
+    
+    // Initialize particles
+    function initParticles() {
+        particles = [];
+        const particleCount = Math.min((canvas.width * canvas.height) / 12000, 100);
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+    }
+    
+    initParticles();
+    window.addEventListener('resize', initParticles);
+    
+    // Draw connections between particles
+    function connectParticles() {
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                let dx = particles[i].x - particles[j].x;
+                let dy = particles[i].y - particles[j].y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 120) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = `rgba(34, 211, 238, ${0.15 * (1 - distance / 120)})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+    
+    // Animation loop
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        particles.forEach(particle => {
+            particle.update();
+            particle.draw();
+        });
+        
+        connectParticles();
+        requestAnimationFrame(animate);
+    }
+    
+    animate();
+}
+
+/* ========================================
+   Timeline Animation Observer
+   ======================================== */
+function initTimelineAnimation() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 150);
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    timelineItems.forEach(item => observer.observe(item));
+}
+
+/* ========================================
+   Publication Cards Animation
+   ======================================== */
+function initPublicationAnimations() {
+    const pubCards = document.querySelectorAll('.publication-card');
+    
+    pubCards.forEach(card => {
+        card.classList.add('fade-in');
+    });
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 200);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+    
+    pubCards.forEach(card => observer.observe(card));
+}
+
+// Initialize new features after DOM load
+document.addEventListener('DOMContentLoaded', function() {
+    initParticleSystem();
+    initTimelineAnimation();
+    initPublicationAnimations();
+});
