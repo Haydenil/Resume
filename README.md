@@ -9,5 +9,5 @@ Personal academic website showcasing research, publications, and professional ex
 ## Contact
 
 - Email: E1539341@u.nus.edu
-- GitHub: https://github.com/114514wo
+- GitHub: https://github.com/Haydenil
 - LinkedIn: https://www.linkedin.com/in/LIZHOUJIAN
