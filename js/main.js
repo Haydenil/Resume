@@ -3,7 +3,7 @@
    Interactive Features & Animations
    ======================================== */
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Initialize all features
     initNavigation();
     initTypingEffect();
@@ -20,18 +20,18 @@ function initNavigation() {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     // Scroll effect for navbar
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
     });
-    
+
     // Mobile menu toggle
-    navToggle.addEventListener('click', function() {
+    navToggle.addEventListener('click', function () {
         navMenu.classList.toggle('active');
         const icon = navToggle.querySelector('i');
         if (navMenu.classList.contains('active')) {
@@ -42,31 +42,31 @@ function initNavigation() {
             icon.classList.add('fa-bars');
         }
     });
-    
+
     // Close menu when clicking a link
     navLinks.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function () {
             navMenu.classList.remove('active');
             const icon = navToggle.querySelector('i');
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
         });
     });
-    
+
     // Active link on scroll
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         let current = '';
         const sections = document.querySelectorAll('section[id]');
-        
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 100;
             const sectionHeight = section.offsetHeight;
-            
+
             if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
                 current = section.getAttribute('id');
             }
         });
-        
+
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === '#' + current) {
@@ -88,15 +88,15 @@ function initTypingEffect() {
         'Autonomous Driving',
         'Reinforcement Learning'
     ];
-    
+
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
     let typingSpeed = 100;
-    
+
     function type() {
         const currentText = texts[textIndex];
-        
+
         if (isDeleting) {
             typingElement.textContent = currentText.substring(0, charIndex - 1);
             charIndex--;
@@ -106,7 +106,7 @@ function initTypingEffect() {
             charIndex++;
             typingSpeed = 100;
         }
-        
+
         if (!isDeleting && charIndex === currentText.length) {
             // Pause at end of word
             typingSpeed = 2000;
@@ -116,10 +116,10 @@ function initTypingEffect() {
             textIndex = (textIndex + 1) % texts.length;
             typingSpeed = 500;
         }
-        
+
         setTimeout(type, typingSpeed);
     }
-    
+
     // Start typing
     setTimeout(type, 1000);
 }
@@ -132,11 +132,11 @@ function initScrollAnimations() {
     const animatedElements = document.querySelectorAll(
         '.about-content, .timeline-item, .experience-card, .skills-category, .award-card, .contact-content'
     );
-    
+
     animatedElements.forEach(el => {
         el.classList.add('fade-in');
     });
-    
+
     // Intersection Observer for fade-in animations
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -148,7 +148,7 @@ function initScrollAnimations() {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     });
-    
+
     document.querySelectorAll('.fade-in').forEach(el => {
         observer.observe(el);
     });
@@ -160,7 +160,7 @@ function initScrollAnimations() {
 function initSkillBars() {
     const skillItems = document.querySelectorAll('.skill-item');
     const skillBars = document.querySelectorAll('.skill-progress');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
@@ -168,7 +168,7 @@ function initSkillBars() {
                 setTimeout(() => {
                     entry.target.classList.add('animate');
                 }, index * 100);
-                
+
                 // Animate progress bar
                 const progressBar = entry.target.querySelector('.skill-progress');
                 if (progressBar) {
@@ -182,7 +182,7 @@ function initSkillBars() {
     }, {
         threshold: 0.5
     });
-    
+
     skillItems.forEach(item => {
         observer.observe(item);
     });
@@ -193,16 +193,16 @@ function initSkillBars() {
    ======================================== */
 function initBackToTop() {
     const backToTop = document.getElementById('back-to-top');
-    
-    window.addEventListener('scroll', function() {
+
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 500) {
             backToTop.classList.add('visible');
         } else {
             backToTop.classList.remove('visible');
         }
     });
-    
-    backToTop.addEventListener('click', function() {
+
+    backToTop.addEventListener('click', function () {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
@@ -214,7 +214,7 @@ function initBackToTop() {
    Smooth Scroll for anchor links
    ======================================== */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
@@ -229,10 +229,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 /* ========================================
    Parallax Effect for Hero
    ======================================== */
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const scrolled = window.scrollY;
     const hero = document.querySelector('.hero-content');
-    
+
     if (hero && scrolled < window.innerHeight) {
         hero.style.transform = `translateY(${scrolled * 0.3}px)`;
         hero.style.opacity = 1 - (scrolled / window.innerHeight);
@@ -252,32 +252,32 @@ console.log('%cInterested in collaboration? Email me at E1539341@u.nus.edu', 'fo
 function initParticleSystem() {
     const canvas = document.getElementById('particle-canvas');
     if (!canvas) return;
-    
+
     const ctx = canvas.getContext('2d');
     let particles = [];
     let mouse = { x: null, y: null, radius: 150 };
-    
+
     // Resize canvas
     function resizeCanvas() {
         canvas.width = canvas.parentElement.offsetWidth;
         canvas.height = canvas.parentElement.offsetHeight;
     }
-    
+
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
-    
+
     // Mouse tracking
-    canvas.addEventListener('mousemove', function(e) {
+    canvas.addEventListener('mousemove', function (e) {
         const rect = canvas.getBoundingClientRect();
         mouse.x = e.clientX - rect.left;
         mouse.y = e.clientY - rect.top;
     });
-    
-    canvas.addEventListener('mouseleave', function() {
+
+    canvas.addEventListener('mouseleave', function () {
         mouse.x = null;
         mouse.y = null;
     });
-    
+
     // Particle class
     class Particle {
         constructor() {
@@ -290,29 +290,29 @@ function initParticleSystem() {
             this.speedY = (Math.random() - 0.5) * 0.5;
             this.density = Math.random() * 30 + 1;
         }
-        
+
         draw() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(34, 211, 238, 0.6)';
+            ctx.fillStyle = 'rgba(59, 130, 246, 0.5)';
             ctx.fill();
         }
-        
+
         update() {
             // Move particles
             this.x += this.speedX;
             this.y += this.speedY;
-            
+
             // Bounce off edges
             if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
             if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-            
+
             // Mouse interaction
             if (mouse.x !== null && mouse.y !== null) {
                 let dx = mouse.x - this.x;
                 let dy = mouse.y - this.y;
                 let distance = Math.sqrt(dx * dx + dy * dy);
-                
+
                 if (distance < mouse.radius) {
                     let force = (mouse.radius - distance) / mouse.radius;
                     let directionX = dx / distance;
@@ -323,7 +323,7 @@ function initParticleSystem() {
             }
         }
     }
-    
+
     // Initialize particles
     function initParticles() {
         particles = [];
@@ -332,10 +332,10 @@ function initParticleSystem() {
             particles.push(new Particle());
         }
     }
-    
+
     initParticles();
     window.addEventListener('resize', initParticles);
-    
+
     // Draw connections between particles
     function connectParticles() {
         for (let i = 0; i < particles.length; i++) {
@@ -343,10 +343,10 @@ function initParticleSystem() {
                 let dx = particles[i].x - particles[j].x;
                 let dy = particles[i].y - particles[j].y;
                 let distance = Math.sqrt(dx * dx + dy * dy);
-                
+
                 if (distance < 120) {
                     ctx.beginPath();
-                    ctx.strokeStyle = `rgba(34, 211, 238, ${0.15 * (1 - distance / 120)})`;
+                    ctx.strokeStyle = `rgba(59, 130, 246, ${0.2 * (1 - distance / 120)})`;
                     ctx.lineWidth = 0.5;
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
@@ -355,20 +355,20 @@ function initParticleSystem() {
             }
         }
     }
-    
+
     // Animation loop
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
+
         particles.forEach(particle => {
             particle.update();
             particle.draw();
         });
-        
+
         connectParticles();
         requestAnimationFrame(animate);
     }
-    
+
     animate();
 }
 
@@ -377,7 +377,7 @@ function initParticleSystem() {
    ======================================== */
 function initTimelineAnimation() {
     const timelineItems = document.querySelectorAll('.timeline-item');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
@@ -390,7 +390,7 @@ function initTimelineAnimation() {
         threshold: 0.2,
         rootMargin: '0px 0px -50px 0px'
     });
-    
+
     timelineItems.forEach(item => observer.observe(item));
 }
 
@@ -399,11 +399,11 @@ function initTimelineAnimation() {
    ======================================== */
 function initPublicationAnimations() {
     const pubCards = document.querySelectorAll('.publication-card');
-    
+
     pubCards.forEach(card => {
         card.classList.add('fade-in');
     });
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
@@ -415,12 +415,12 @@ function initPublicationAnimations() {
     }, {
         threshold: 0.1
     });
-    
+
     pubCards.forEach(card => observer.observe(card));
 }
 
 // Initialize new features after DOM load
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initParticleSystem();
     initTimelineAnimation();
     initPublicationAnimations();
