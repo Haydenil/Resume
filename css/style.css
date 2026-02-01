@@ -411,14 +411,16 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 30%;
     border-radius: 50%;
-    border: 4px solid white;
+    border: 4px solid rgba(255, 255, 255, 0.8);
     box-shadow: var(--shadow-lg);
+    transform: scale(0.9);
 }
 
 .avatar-ring {
     position: absolute;
-    inset: -15px;
+    inset: 2%;
     border-radius: 50%;
     border: 2px dashed var(--primary-400);
     animation: rotate 20s linear infinite;
