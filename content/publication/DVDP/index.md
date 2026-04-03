@@ -14,11 +14,11 @@ authors:
 author_notes: []
 
 # Publication date (use the actual arXiv submission date)
-date: "2025-09-16T00:00:00Z"
+date: "2026-09-16T00:00:00Z"
 doi: "10.48550/arXiv.2509.13024"
 
 # Schedule page publish date (NOT publication's date).
-publishDate: "2025-09-16T00:00:00Z"
+publishDate: "2026-09-16T00:00:00Z"
 
 # Publication type (CSL standard)
 publication_types: ["article-journal"]
