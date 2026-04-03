@@ -1239,6 +1239,14 @@ img {
     box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
 }
 
+.hero-cta.download-cv-cn {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.hero-cta.download-cv-cn:hover {
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
+}
+
 .hero-cta.download-cv i {
     animation: none;
 }

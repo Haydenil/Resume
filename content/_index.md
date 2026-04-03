@@ -13,11 +13,11 @@ sections:
     content:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
-      text: ""
+      text: "[CV (EN)](assets/CV_EN.pdf) | [CV (中文)](assets/CV_CN.pdf)"
       # Show a call-to-action button under your biography? (optional)
       button:
-        text: Download CV
-        url: uploads/resume.pdf
+        text: Download CV (EN)
+        url: assets/CV_EN.pdf
     design:
       css_class: dark
       background:
